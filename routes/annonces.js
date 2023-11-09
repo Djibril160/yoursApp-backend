@@ -14,7 +14,7 @@ const { cleanSpace } = require("../modules/cleanSpace");
 // route pour création d'une annonce par le professionnel
 router.post("/create/:token", async (req, res) => {
   // todo - remettre
-  // création des constantes token = req.body.token, titre = req.body.titre...
+  // création des constantes token = req.body.token, titre = req.body.titre etc ...
   const {
     date_de_creation,
     date_de_publication,
