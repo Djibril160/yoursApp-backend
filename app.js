@@ -21,25 +21,25 @@ var app = express();
 const cors = require("cors");
 // changer * par les urls du frontend une fois déployé, séparé par des virgule possible aussi d'ajouter sont ip
 // todo - décommenter ligne 24 à 34 et commenter ligne 37 à 42, lors d'un déploiement
-// const allowedOrigins = ['*', 'https://yours-frontend.vercel.app'];
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (allowedOrigins.includes(origin) || !origin) {
-//       callback(null, true)
-//     } else {
-//       callback(new Error('Pas autorisé :face_with_peeking_eye:'))
-//     }
-//   },
-//   credentials: true
-// }
-
-// si vous souhaitez qu'il soit disponible à tout le monde
+const allowedOrigins = ['*', 'https://yours-app-frontend.vercel.app'];
 const corsOptions = {
   origin: function (origin, callback) {
-    callback(null, true)
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true)
+    } else {
+      callback(new Error('Pas autorisé :face_with_peeking_eye:'))
+    }
   },
   credentials: true
 }
+
+// // si vous souhaitez qu'il soit disponible à tout le monde
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     callback(null, true)
+//   },
+//   credentials: true
+// }
 
 app.use(cors(corsOptions));
 
