@@ -21,7 +21,7 @@ var app = express();
 const cors = require("cors");
 // changer * par les urls du frontend une fois déployé, séparé par des virgule possible aussi d'ajouter sont ip
 // todo - décommenter ligne 24 à 34 et commenter ligne 37 à 42, lors d'un déploiement
-const allowedOrigins = ['*', 'https://yours-app-frontend.vercel.app'];
+const allowedOrigins = ['https://yours-app-frontend.vercel.app'];
 const corsOptions = {
   origin: function (origin, callback) {
     if (allowedOrigins.includes(origin) || !origin) {
